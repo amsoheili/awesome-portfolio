@@ -1,0 +1,115 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  background: none;
+  font-family: "Gotham";
+  font-style: italic;
+  letter-spacing: 0.3rem;
+  padding: 1rem;
+  width: 8rem;
+  height: 3rem;
+}
+
+.navbar .appbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: none;
+  padding: 2rem 3rem;
+  box-shadow: none;
+}
+
+.appbar .links {
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.appbar .btn {
+  background: none;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.main .home-section {
+  background: url("./assets/images/bg-3.jpg") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden ; */
+  /* position: absolute;
+  left: 0; */
+}
+
+.main .home-section .overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #9ec2de;
+  opacity: 0.1;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.home-section .start {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 2rem 4rem;
+  border-bottom: 1px solid #fff;
+}
+
+.info-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-section .introduction {
+  z-index: 2;
+  width: 70%;
+  height: 50%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: none;
+}
+
+.introduction .avatar {
+  background: url("./assets/images/Developer.jpg") no-repeat center center/cover;
+  height: 100%;
+  width: 40%;
+}
+
+.introduction .greetings {
+  color: #9e2420;
+  font-size: 1.5rem;
+  width: 50%;
+  height: 100%;
+  padding: 0.3rem 1rem;
+}
