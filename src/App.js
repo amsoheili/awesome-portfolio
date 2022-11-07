@@ -2,58 +2,68 @@ import classes from "./App.module.css";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import Avatar from "@mui/material/Avatar";
-import DeveloperImage from "./assets/images/Developer.jpg";
-import { useState } from "react";
+// import Avatar from "@mui/material/Avatar";
+// import DeveloperImage from "./assets/images/Developer.jpg";
+import { useState, useEffect } from "react";
+
+import Introduction from "./components/Introduction";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Greeting from "./components/Greeting";
 
 const App = () => {
-  const spanStyle = {
-    color: "#1d3b6b",
-    "border-bottom": "1px solid #000",
-    padding: "1rem 0",
+  const project_1 = [
+    {
+      id: 1,
+      title: "Home Page 0",
+      imageSrc: "./assets/projects/project1/Home_Page_0.jpg",
+    },
+    {
+      id: 2,
+      title: "Home Page 1",
+      imageSrc: "./assets/projects/project1/Home_Page_1.jpg",
+    },
+    {
+      id: 3,
+      title: "About Page",
+      imageSrc: "./assets/projects/project1/About_Page.jpg",
+    },
+  ];
+  //setTimeout(() => {}, 200);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [pageNum, setPageNum] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+    console.log(Math.round(position / (2 * window.innerHeight)));
+    setPageNum(Math.round(position / window.innerHeight));
   };
 
-  const [spanText, setSpanText] = useState({
-    text: "Front End Developer",
-    letter: 0,
-  });
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-  setTimeout(() => {}, 200);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className={classes.main}>
-      <div className={classes.navbar}>
-        <AppBar className={classes.appbar}>
-          <div className={classes.logo}>
-            <h1>AMS</h1>
-          </div>
-          <div className={classes.links}>
-            <Button className={classes.btn}>Home</Button>
-            <Button className={classes.btn}>About</Button>
-            <Button className={classes.btn}>Contact</Button>
-          </div>
-        </AppBar>
-      </div>
-      <div className={classes["home-section"]}>
-        <div className={classes.overlay}></div>
-        <div className={classes.start}>
-          <h1>In The Name Of The God</h1>
+      <Navbar />
+      <Home />
+      <Greeting />
+      <Introduction />
+      {/* <Projects /> */}
+      {/* <div className={classes["projects-section"]}>
+        <div className={classes.title}>
+          <h1>My Projects</h1>
         </div>
-      </div>
-      <div className={classes["info-section"]}>
-        <Card className={classes.introduction}>
-          <div className={classes.avatar}></div>
-          <div className={classes.greetings}>
-            <h1>
-              Hello
-              <br />
-              I'm Amir Mohammad Soheili
-              <br />
-              <span style={spanStyle}>Front End Developer</span>
-            </h1>
-          </div>
-        </Card>
-      </div>
+        <div className={classes.carouselSlider}>
+          <CarouselSlider items={project_1} />
+        </div>
+      </div> */}
     </div>
   );
 };

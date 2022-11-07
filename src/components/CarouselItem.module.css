@@ -1,0 +1,11 @@
+.main {
+  background: url("../assets/images/projects/project1/Home_Page_0.jpg")
+    no-repeat center center/cover;
+  height: "100%";
+  width: "100%";
+}
+
+.main > div {
+  height: "100%";
+  width: "100%";
+}

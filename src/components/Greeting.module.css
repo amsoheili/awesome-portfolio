@@ -1,0 +1,37 @@
+.info-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-section .introduction {
+  z-index: 2;
+  width: 70%;
+  height: 50%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: none;
+}
+
+.introduction .avatar {
+  background: url("../assets/images/Developer.jpg") no-repeat center
+    center/cover;
+  height: 100%;
+  width: 40%;
+}
+
+.introduction .greetings {
+  color: #9e2420;
+  font-size: 1.5rem;
+  width: 50%;
+  height: 100%;
+  padding: 0.3rem 1rem;
+}
