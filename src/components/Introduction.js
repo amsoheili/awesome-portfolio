@@ -26,15 +26,14 @@ const Introduction = (props) => {
             <h5>Introduce</h5>
           </div>
           <div>
-            <h1>Introduce</h1>
+            <h1>My Journey</h1>
           </div>
           <div>
             <p>
-              Since beginning my journey as a freelancer designer nearly 4 years
-              ago, I've done remote work for agencies, consulted for startups,
-              and collaborated with talented people to create digital products
-              for both business and consumer use, I am quietly confident,
-              naturally curious.
+              Since beginning my journey as a front end developer nearly 2 years
+              ago, I've done diffrent projects , consulted for an startup, and
+              collaborated with talented people to become more experienced, I am
+              quietly confident, naturally curious.
             </p>
           </div>
         </div>
