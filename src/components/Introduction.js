@@ -1,7 +1,7 @@
 import classes from "./Introduction.module.css";
-const Introduction = () => {
+const Introduction = (props) => {
   return (
-    <div className={classes.main}>
+    <div className={classes.main} id={props.id}>
       <div className={classes.container}>
         <div className={classes.left}>
           <div className={classes.card}>

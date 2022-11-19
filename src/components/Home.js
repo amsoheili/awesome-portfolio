@@ -22,7 +22,7 @@ const Home = (props) => {
   }, 3000);
 
   return (
-    <div className={classes["home-section"]}>
+    <div className={classes["home-section"]} id={props.id}>
       <div className={classes.overlay}></div>
       <div
         className={classes.start}

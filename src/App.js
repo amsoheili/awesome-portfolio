@@ -5,11 +5,12 @@ import Card from "@mui/material/Card";
 // import Avatar from "@mui/material/Avatar";
 // import DeveloperImage from "./assets/images/Developer.jpg";
 import { useState, useEffect } from "react";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 import Introduction from "./components/Introduction";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Greeting from "./components/Greeting";
+import ContactMe from "./components/ContactMe";
 
 const App = () => {
   const project_1 = [
@@ -52,18 +53,10 @@ const App = () => {
   return (
     <div className={classes.main}>
       <Navbar />
-      <Home />
-      <Greeting />
-      <Introduction />
-      {/* <Projects /> */}
-      {/* <div className={classes["projects-section"]}>
-        <div className={classes.title}>
-          <h1>My Projects</h1>
-        </div>
-        <div className={classes.carouselSlider}>
-          <CarouselSlider items={project_1} />
-        </div>
-      </div> */}
+      <Home id="home" />
+      <Greeting id="greeting" />
+      <Introduction id="introduction" />
+      <ContactMe id="contact-me" />
     </div>
   );
 };
