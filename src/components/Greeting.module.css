@@ -35,7 +35,7 @@
 
 .introduction .greetings {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   width: 50%;
   height: 100%;
   padding: 0.3rem 1rem;
@@ -43,4 +43,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .info-section .introduction {
+    flex-direction: column;
+  }
+
+  .info-section .introduction {
+    height: 100%;
+    width: 100%;
+    padding-top: 10rem;
+  }
+
+  .introduction .avatar {
+    width: 300px;
+    height: 400px;
+  }
+
+  .introduction .greetings {
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
 }

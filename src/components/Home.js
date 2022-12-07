@@ -33,9 +33,9 @@ const Home = (props) => {
           setIsHovering(false);
         }}
       >
-        <h1>
-          In The Name Of
-          <Typewriter words={titleArray} typeSpeed={50} />
+        <h1 className={classes.title}>
+          Never Stop <br />
+          Looking Up <br />
         </h1>
       </div>
     </div>

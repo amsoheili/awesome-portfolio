@@ -1,24 +1,24 @@
 import classes from "./Navbar.module.css";
 import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
-const Navbar = (props) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [pageNum, setPageNum] = useState(0);
+import MenuItems from "./MenuItems";
+import HambergurMenu from "./HambergurMenu";
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-    // console.log(Math.round(position / (2 * window.innerHeight)));
-    setPageNum(Math.round(position / (2 * window.innerHeight)));
-  };
+const Navbar = (props) => {
+  const [isMenuHambergur, setIsMenuHambergur] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+      // setIsMenuHambergur(screenWidth < 500);
+    };
+
+    window.addEventListener("resize", changeWidth);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", changeWidth);
     };
   }, []);
 
@@ -28,15 +28,15 @@ const Navbar = (props) => {
     }%, #202a7a)`,
   };
 
+  const menuItems = [
+    { title: "Home", link: "home" },
+    { title: "Greeting", link: "greeting" },
+    { title: "About", link: "introduction" },
+    { title: "Contact", link: "contact-me" },
+  ];
+
   return (
     <div className={classes.navbar}>
-      {/* <div
-        className={
-          window.pageYOffset < window.innerHeight / 2
-            ? classes["background-light"]
-            : classes["background-dark"]
-        }
-      ></div> */}
       <AppBar
         className={
           window.pageYOffset < window.innerHeight / 4
@@ -52,48 +52,8 @@ const Navbar = (props) => {
         <div className={classes.logo}>
           <h1>AMS</h1>
         </div>
-        <div className={classes.links}>
-          <Link
-            activeClass="active"
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <Button className={classes.btn}>Home</Button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="greeting"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <Button className={classes.btn}>Greeting</Button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="introduction"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <Button className={classes.btn}>About</Button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="contact-me"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
-            <Button className={classes.btn}>Contact</Button>
-          </Link>
-        </div>
+        {screenWidth >= 600 && <MenuItems menuItems={menuItems} />}
+        {screenWidth < 600 && <HambergurMenu menuItems={menuItems} />}
       </AppBar>
     </div>
   );

@@ -30,7 +30,7 @@
   font-family: "Gotham";
   font-style: italic;
   letter-spacing: 0.3rem;
-  padding-top: 0.5rem;
+  /* padding-top: 0.5rem; */
   width: 8rem;
   height: 3rem;
 }
@@ -42,21 +42,10 @@
   background: none;
   padding: 1rem 3rem;
   box-shadow: none;
+  color: #fff;
 }
 
 /* .navbar .appbar-bg-dark {
   background-color: #222;
   opacity: 0.9;
 } */
-
-.appbar .links {
-  margin-right: 5rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.appbar .btn {
-  background: none;
-  color: #fff;
-  padding: 1rem 2rem;
-}

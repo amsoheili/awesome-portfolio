@@ -1,0 +1,11 @@
+.menu {
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu .btn {
+  background: none;
+  color: #fff;
+  padding: 1rem 2rem;
+}
