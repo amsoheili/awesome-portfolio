@@ -78,9 +78,17 @@ p {
     justify-content: center;
   }
 
+  p {
+    line-height: 1.3rem;
+  }
+
   .right {
     width: 100%;
     margin: 0;
+  }
+
+  .right h1 {
+    font-size: 3rem;
   }
 
   .left {
@@ -94,10 +102,16 @@ p {
     height: 30%;
     width: 100%;
     /* padding: 0.5rem; */
+    font-size: 0.8rem;
+  }
+
+  .left .card h1 {
+    font-size: 1rem;
   }
 
   .left .card:last-child {
-    padding-bottom: 0;
+    padding-bottom: 0.5rem;
     height: 40%;
+    margin-bottom: 1rem;
   }
 }
