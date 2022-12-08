@@ -32,6 +32,7 @@ const Navbar = (props) => {
     { title: "Home", link: "home" },
     { title: "Greeting", link: "greeting" },
     { title: "About", link: "introduction" },
+    { title: "Projects", link: "projects" },
     { title: "Contact", link: "contact-me" },
   ];
 

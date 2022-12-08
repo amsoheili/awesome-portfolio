@@ -7,10 +7,11 @@ import Card from "@mui/material/Card";
 import { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Introduction from "./components/Introduction";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home";
 import Greeting from "./components/Greeting";
 import ContactMe from "./components/ContactMe";
+import Projects from "./components/Projects/Projects";
 
 const App = () => {
   const project_1 = [
@@ -56,6 +57,7 @@ const App = () => {
       <Home id="home" />
       <Greeting id="greeting" />
       <Introduction id="introduction" />
+      <Projects id="projects" />
       <ContactMe id="contact-me" />
     </div>
   );
