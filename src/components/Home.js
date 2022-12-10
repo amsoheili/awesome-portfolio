@@ -1,8 +1,13 @@
 import { useState } from "react";
 import classes from "./Home.module.css";
 import { Typewriter } from "react-simple-typewriter";
+import { useInView } from "react-intersection-observer";
 
 const Home = (props) => {
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
   const [title, setTitle] = useState("");
   const [titleLength, setTitleLength] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -33,7 +38,10 @@ const Home = (props) => {
           setIsHovering(false);
         }}
       >
-        <h1 className={classes.title}>
+        <h1
+          className={classes[`${inView ? "titleWithEffect" : "title"}`]}
+          ref={ref}
+        >
           Never Stop <br />
           Looking Up <br />
         </h1>

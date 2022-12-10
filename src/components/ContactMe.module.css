@@ -38,11 +38,40 @@
 
 .links {
   margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
 }
+
 .links a {
   cursor: pointer;
   color: #fff;
   margin-left: 2rem;
+}
+
+.link1 {
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.link2 {
+  animation: fadeInDown 1.8s ease-in-out;
+  /* animation-delay: 0.5s; */
+}
+
+.link3 {
+  animation: fadeInDown 2s ease-in-out;
+  /* animation-delay: 1s; */
+}
+
+@keyframes fadeInDown {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 600px) {

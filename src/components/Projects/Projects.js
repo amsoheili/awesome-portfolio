@@ -20,11 +20,20 @@ import project3_1 from "../../assets/images/projects/project4/main_menu.jpg";
 import project3_2 from "../../assets/images/projects/project4/select_Menu.jpg";
 import project3_3 from "../../assets/images/projects/project4/map.jpg";
 import project3_4 from "../../assets/images/projects/project4/main_map.jpg";
+import { useInView } from "react-intersection-observer";
 
 const Projects = (props) => {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+
   return (
     <div className={classes.main} id={props.id}>
-      <div className={classes.container}>
+      <div
+        className={classes[`${inView ? "containerWithEffect" : "container"}`]}
+        ref={ref}
+      >
         <Swiper
           className="mySwiper swiper-h"
           spaceBetween={50}
@@ -140,11 +149,6 @@ const Projects = (props) => {
               <SwiperSlide>
                 <div className={classes.projectImg}>
                   <img src={project3_3} alt="Project3_3" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={classes.projectImg}>
-                  <img src={project3_4} alt="Project3_4" />
                 </div>
               </SwiperSlide>
             </Swiper>
