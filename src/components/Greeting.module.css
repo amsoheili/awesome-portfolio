@@ -125,6 +125,7 @@
 
 @keyframes fadeInDownMobile {
   from {
+    display: none;
     opacity: 0;
     transform: translateY(30px);
   }
@@ -135,6 +136,7 @@
 
 @keyframes fadeInUpMobile {
   from {
+    display: none;
     opacity: 0;
     transform: translateY(-30px);
   }

@@ -50,6 +50,7 @@
 
 @keyframes fadeInDown {
   from {
+    display: none;
     opacity: 0;
     transform: translateY(300px);
   }
