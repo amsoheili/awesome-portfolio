@@ -34,6 +34,7 @@ const Projects = (props) => {
         className={classes[`${inView ? "containerWithEffect" : "container"}`]}
         ref={ref}
       >
+        {/*
         <Swiper
           className="mySwiper swiper-h"
           spaceBetween={50}
@@ -87,16 +88,6 @@ const Projects = (props) => {
                   <img src={project1_7} alt="Project1_7" />
                 </div>
               </SwiperSlide>
-              {/* <SwiperSlide>
-                <div className={classes.projectImg}>
-                  <img src={project1_8} alt="Project1_8" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={classes.projectImg}>
-                  <img src={project1_9} alt="Project1_9" />
-                </div>
-              </SwiperSlide> */}
             </Swiper>
           </SwiperSlide>
           <SwiperSlide>
@@ -154,6 +145,33 @@ const Projects = (props) => {
             </Swiper>
           </SwiperSlide>
         </Swiper>
+       */}
+        <div className={classes.projects}>
+          <h1>My Projects</h1>
+          <div className={classes.project}>
+            <h2>
+              <a href="https://miniman.vercel.app/">Miniman</a>
+            </h2>
+            <p>This project is a little advertising app</p>
+            <div>
+              <h3>Technologies</h3>
+              <p>React - JSX - SASS - Material UI - REST API</p>
+            </div>
+          </div>
+          <div className={classes.project}>
+            <h2>
+              <a href="https://ketabak.vercel.app">Ketabak</a>
+            </h2>
+            <p>Website for Ketabak publishers and It is an ongoing project</p>
+            <div>
+              <h3>Technologies</h3>
+              <p>
+                React - JSX - SASS - Material UI - REST API - Custom Hook -
+                Swiper Js
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
